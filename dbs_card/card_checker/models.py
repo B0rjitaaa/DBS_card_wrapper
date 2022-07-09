@@ -13,6 +13,7 @@ COLORS = [
     ('Blue/Green', 'Blue and Green'),
     ('Red/Yellow', 'Red and Yellow'),
     ('Red/Blue', 'Red and Blue'),
+    ('Red/Black', 'Red and Black'),
 ]
 
 CARD_TYPES = [
@@ -24,7 +25,7 @@ CARD_TYPES = [
 
 class Deck(models.Model):
     deck_name = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __str__(self):
         return self.deck_name
